@@ -1,0 +1,6 @@
+{
+  "name": "cycle-insight-generator",
+  "version": "1.0.0",
+  "description": "Generates actionable insights by comparing the current cycle state with historical patterns.",
+  "main": "index.js"
+}

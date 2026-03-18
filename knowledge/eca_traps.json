@@ -1,0 +1,15 @@
+[
+  {
+    "id": "TRAP_001",
+    "label": "404_UI_Anxiety_Loop",
+    "context": "User sees a 404 page in OpenClaw Dashboard/Webchat.",
+    "trap_path": "Assume system failure -> Send repeated instructions (e.g., 'switch model') to force response.",
+    "failure_signal": "Repetitive command input within < 30 seconds.",
+    "cost": "High token waste, UI queue buildup, amplified user anxiety.",
+    "escape": "Hard refresh browser (Cmd+R) or check 'Overview' tab; check if Chrome plugin badge is green.",
+    "recurrence_risk": "high",
+    "false_alarm_cost": "low",
+    "drift_scope": "OpenClaw Web UI usage",
+    "created_at": "2026-03-04T11:29:00+08:00"
+  }
+]

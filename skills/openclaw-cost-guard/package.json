@@ -1,0 +1,9 @@
+{
+  "name": "openclaw-cost-guard",
+  "version": "1.0.0",
+  "description": "Cost-conscious response mode for OpenClaw",
+  "main": "SKILL.md",
+  "keywords": ["openclaw", "cost", "token", "efficiency"],
+  "author": "user",
+  "license": "MIT"
+}

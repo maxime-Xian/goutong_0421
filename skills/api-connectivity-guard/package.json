@@ -1,0 +1,6 @@
+{
+  "name": "api-connectivity-guard",
+  "version": "1.0.0",
+  "description": "Proactively test LLM and messaging API endpoints for regional blocks and connectivity issues.",
+  "main": "index.js"
+}

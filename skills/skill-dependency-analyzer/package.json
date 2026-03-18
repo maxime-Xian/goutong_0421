@@ -1,0 +1,6 @@
+{
+  "name": "skill-dependency-analyzer",
+  "version": "1.0.0",
+  "description": "Analyzes internal skill dependencies by scanning for cross-skill requirements.",
+  "main": "index.js"
+}

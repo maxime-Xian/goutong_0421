@@ -1,0 +1,6 @@
+{
+  "name": "signal-prioritizer",
+  "version": "1.0.0",
+  "description": "Analyzes current signals and ranks them by urgency based on historical success correlation.",
+  "main": "index.js"
+}

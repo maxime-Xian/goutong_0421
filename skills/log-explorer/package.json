@@ -1,0 +1,6 @@
+{
+  "name": "log-explorer",
+  "version": "1.0.0",
+  "description": "Analyze system and evolution logs for recurring patterns and errors.",
+  "main": "index.js"
+}

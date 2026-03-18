@@ -1,0 +1,2 @@
+function validateGene(g){const r=['type','id','schema_version','category','signals_match','preconditions','strategy','constraints','validation'];const m=r.filter(f=>!g[f]);return{valid:m.length===0,missing:m}}
+module.exports={validateGene,main:()=>{const t={type:'Gene',id:'test',schema_version:'1.5.0',category:'innovate',signals_match:['test'],preconditions:['test'],strategy:['test'],constraints:{},validation:[]};console.log('### Gene Validation');console.log('Valid:',validateGene(t).valid);return validateGene(t)}};

@@ -1,0 +1,6 @@
+{
+  "name": "gene-usage-tracker",
+  "version": "1.0.0",
+  "description": "Tracks gene usage patterns across evolution cycles.",
+  "main": "index.js"
+}

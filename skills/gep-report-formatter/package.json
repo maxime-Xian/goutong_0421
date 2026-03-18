@@ -1,0 +1,6 @@
+{
+  "name": "gep-report-formatter",
+  "version": "1.0.0",
+  "description": "Formats evolution cycle reports into standardized markdown for Feishu/notifications.",
+  "main": "index.js"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "video-summarizer",
+  "version": "1.0.0",
+  "description": "A tool that uses ffmpeg to extract frames from video files at specified intervals, enabling agents to analyze the visual content using image-based models.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo "No tests specified""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

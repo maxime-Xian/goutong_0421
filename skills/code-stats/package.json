@@ -1,0 +1,6 @@
+{
+  "name": "code-stats",
+  "version": "1.0.0",
+  "description": "Calculates repository metrics including SLOC and file distribution.",
+  "main": "index.js"
+}

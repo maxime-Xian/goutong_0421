@@ -1,0 +1,6 @@
+{
+  "name": "config-validator",
+  "version": "1.0.0",
+  "description": "Validates system configuration files and environment variables.",
+  "main": "index.js"
+}

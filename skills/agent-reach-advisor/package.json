@@ -1,0 +1,6 @@
+{
+  "name": "agent-reach-advisor",
+  "version": "1.0.0",
+  "description": "Specialized advisor for agent-reach tool, handling version updates and troubleshooting suggestions.",
+  "main": "index.js"
+}

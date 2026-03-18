@@ -1,0 +1,681 @@
+{
+  "version": 1,
+  "current": {
+    "type": "PersonalityState",
+    "rigor": 0.7,
+    "creativity": 0.35,
+    "verbosity": 0.25,
+    "risk_tolerance": 0.4,
+    "obedience": 0.9
+  },
+  "stats": {
+    "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9": {
+      "success": 93,
+      "fail": 1,
+      "avg_score": 0.843085106382979,
+      "n": 94,
+      "updated_at": "2026-03-18T06:37:11.243Z"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-03-17T04:55:07.747Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "failed",
+      "score": 0.2,
+      "notes": "event:evt_1773723307686"
+    },
+    {
+      "at": "2026-03-18T02:36:52.638Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773801412592"
+    },
+    {
+      "at": "2026-03-18T02:39:00.200Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773801540130"
+    },
+    {
+      "at": "2026-03-18T03:56:02.218Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773806162170"
+    },
+    {
+      "at": "2026-03-18T03:58:17.405Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773806297356"
+    },
+    {
+      "at": "2026-03-18T04:02:33.954Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773806553906"
+    },
+    {
+      "at": "2026-03-18T04:05:42.411Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773806742360"
+    },
+    {
+      "at": "2026-03-18T04:08:48.198Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773806928129"
+    },
+    {
+      "at": "2026-03-18T04:10:37.035Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807036984"
+    },
+    {
+      "at": "2026-03-18T04:13:56.253Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807236206"
+    },
+    {
+      "at": "2026-03-18T04:14:48.844Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807288796"
+    },
+    {
+      "at": "2026-03-18T04:18:41.708Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807521655"
+    },
+    {
+      "at": "2026-03-18T04:19:30.080Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807570032"
+    },
+    {
+      "at": "2026-03-18T04:19:58.624Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807598576"
+    },
+    {
+      "at": "2026-03-18T04:23:44.108Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807824061"
+    },
+    {
+      "at": "2026-03-18T04:26:22.565Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773807982510"
+    },
+    {
+      "at": "2026-03-18T04:29:40.321Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773808180273"
+    },
+    {
+      "at": "2026-03-18T04:32:31.539Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773808351489"
+    },
+    {
+      "at": "2026-03-18T04:35:32.301Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773808532252"
+    },
+    {
+      "at": "2026-03-18T04:38:18.059Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773808698007"
+    },
+    {
+      "at": "2026-03-18T04:44:09.265Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773809049217"
+    },
+    {
+      "at": "2026-03-18T04:46:55.700Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773809215651"
+    },
+    {
+      "at": "2026-03-18T04:54:12.395Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773809652342"
+    },
+    {
+      "at": "2026-03-18T04:56:16.492Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773809776440"
+    },
+    {
+      "at": "2026-03-18T04:57:41.670Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773809861615"
+    },
+    {
+      "at": "2026-03-18T05:02:51.423Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773810171372"
+    },
+    {
+      "at": "2026-03-18T05:05:19.223Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773810319163"
+    },
+    {
+      "at": "2026-03-18T05:08:42.320Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773810522274"
+    },
+    {
+      "at": "2026-03-18T05:12:14.192Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773810734145"
+    },
+    {
+      "at": "2026-03-18T05:14:21.020Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773810860968"
+    },
+    {
+      "at": "2026-03-18T05:17:12.326Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811032273"
+    },
+    {
+      "at": "2026-03-18T05:20:27.062Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811227015"
+    },
+    {
+      "at": "2026-03-18T05:22:09.226Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811329177"
+    },
+    {
+      "at": "2026-03-18T05:24:29.116Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811469070"
+    },
+    {
+      "at": "2026-03-18T05:30:33.880Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811833832"
+    },
+    {
+      "at": "2026-03-18T05:32:34.239Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773811954187"
+    },
+    {
+      "at": "2026-03-18T05:34:21.419Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812061372"
+    },
+    {
+      "at": "2026-03-18T05:38:20.255Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812300231"
+    },
+    {
+      "at": "2026-03-18T05:39:37.096Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812377072"
+    },
+    {
+      "at": "2026-03-18T05:40:09.929Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812409904"
+    },
+    {
+      "at": "2026-03-18T05:41:14.047Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812474022"
+    },
+    {
+      "at": "2026-03-18T05:41:44.415Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812504391"
+    },
+    {
+      "at": "2026-03-18T05:43:09.475Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812589441"
+    },
+    {
+      "at": "2026-03-18T05:43:46.436Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812626412"
+    },
+    {
+      "at": "2026-03-18T05:45:03.890Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812703864"
+    },
+    {
+      "at": "2026-03-18T05:45:30.013Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812729988"
+    },
+    {
+      "at": "2026-03-18T05:46:38.549Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812798526"
+    },
+    {
+      "at": "2026-03-18T05:47:08.228Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812828204"
+    },
+    {
+      "at": "2026-03-18T05:48:18.722Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812898696"
+    },
+    {
+      "at": "2026-03-18T05:49:01.265Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773812941241"
+    },
+    {
+      "at": "2026-03-18T05:50:31.572Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813031544"
+    },
+    {
+      "at": "2026-03-18T05:51:09.976Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813069949"
+    },
+    {
+      "at": "2026-03-18T05:51:51.668Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813111643"
+    },
+    {
+      "at": "2026-03-18T05:53:45.294Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813225268"
+    },
+    {
+      "at": "2026-03-18T05:54:29.509Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813269483"
+    },
+    {
+      "at": "2026-03-18T05:55:04.359Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813304335"
+    },
+    {
+      "at": "2026-03-18T05:55:47.374Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813347350"
+    },
+    {
+      "at": "2026-03-18T05:57:57.017Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813476992"
+    },
+    {
+      "at": "2026-03-18T05:58:30.582Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813510558"
+    },
+    {
+      "at": "2026-03-18T05:59:16.670Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813556643"
+    },
+    {
+      "at": "2026-03-18T05:59:48.223Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813588197"
+    },
+    {
+      "at": "2026-03-18T06:00:19.642Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813619617"
+    },
+    {
+      "at": "2026-03-18T06:02:51.777Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813771751"
+    },
+    {
+      "at": "2026-03-18T06:03:26.775Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813806749"
+    },
+    {
+      "at": "2026-03-18T06:04:33.368Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813873344"
+    },
+    {
+      "at": "2026-03-18T06:05:08.600Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813908576"
+    },
+    {
+      "at": "2026-03-18T06:05:58.261Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773813958234"
+    },
+    {
+      "at": "2026-03-18T06:08:33.554Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814113528"
+    },
+    {
+      "at": "2026-03-18T06:09:05.629Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814145605"
+    },
+    {
+      "at": "2026-03-18T06:09:37.791Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814177766"
+    },
+    {
+      "at": "2026-03-18T06:10:30.020Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814229994"
+    },
+    {
+      "at": "2026-03-18T06:11:11.288Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814271260"
+    },
+    {
+      "at": "2026-03-18T06:13:24.610Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814404585"
+    },
+    {
+      "at": "2026-03-18T06:14:09.583Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814449556"
+    },
+    {
+      "at": "2026-03-18T06:14:47.569Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814487544"
+    },
+    {
+      "at": "2026-03-18T06:15:18.956Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814518931"
+    },
+    {
+      "at": "2026-03-18T06:15:56.466Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814556442"
+    },
+    {
+      "at": "2026-03-18T06:18:30.910Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814710886"
+    },
+    {
+      "at": "2026-03-18T06:19:02.440Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814742415"
+    },
+    {
+      "at": "2026-03-18T06:19:43.800Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814783773"
+    },
+    {
+      "at": "2026-03-18T06:20:31.168Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814831138"
+    },
+    {
+      "at": "2026-03-18T06:21:06.208Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773814866181"
+    },
+    {
+      "at": "2026-03-18T06:24:04.926Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815044899"
+    },
+    {
+      "at": "2026-03-18T06:24:43.707Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815083680"
+    },
+    {
+      "at": "2026-03-18T06:25:29.128Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815129102"
+    },
+    {
+      "at": "2026-03-18T06:26:23.512Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815183477"
+    },
+    {
+      "at": "2026-03-18T06:26:58.371Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815218345"
+    },
+    {
+      "at": "2026-03-18T06:29:35.138Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815375113"
+    },
+    {
+      "at": "2026-03-18T06:30:29.802Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815429774"
+    },
+    {
+      "at": "2026-03-18T06:32:04.320Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815524284"
+    },
+    {
+      "at": "2026-03-18T06:32:48.676Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815568645"
+    },
+    {
+      "at": "2026-03-18T06:33:34.193Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815614168"
+    },
+    {
+      "at": "2026-03-18T06:36:36.245Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815796220"
+    },
+    {
+      "at": "2026-03-18T06:37:11.243Z",
+      "key": "rigor=0.7|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
+      "outcome": "success",
+      "score": 0.85,
+      "notes": "event:evt_1773815831218"
+    }
+  ],
+  "updated_at": "2026-03-18T12:28:02.469Z"
+}

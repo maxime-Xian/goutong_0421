@@ -1,0 +1,6 @@
+{
+  "name": "meme-generator",
+  "version": "1.0.0",
+  "description": "Create memes by overlaying text on images using ffmpeg.",
+  "main": "index.js"
+}

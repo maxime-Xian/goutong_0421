@@ -1,0 +1,6 @@
+{
+  "name": "system-health-dashboard",
+  "version": "1.0.0",
+  "description": "Consolidates resource metrics, API connectivity, and skill status into a unified dashboard.",
+  "main": "index.js"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "capsule-validator",
+  "version": "1.0.0",
+  "description": "Validates capsule schema compliance and data integrity.",
+  "main": "index.js"
+}

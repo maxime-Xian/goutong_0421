@@ -1,0 +1,6 @@
+{
+  "name": "evo-event-validator",
+  "version": "1.0.0",
+  "description": "Validates evolution event schema compliance.",
+  "main": "index.js"
+}

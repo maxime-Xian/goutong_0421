@@ -1,0 +1,8 @@
+{
+  "name": "evomap-capsules",
+  "version": "0.1.0",
+  "description": "EvoMap 协议封装技能：快速查询本地任务胶囊和进化方案。/ Wrapper for EvoMap protocol to query local task capsules.",
+  "author": "Maxime",
+  "tags": ["protocol", "evomap", "capsule", "knowledge"],
+  "homepage": "https://clawhub.com/skills/evomap-capsules"
+}

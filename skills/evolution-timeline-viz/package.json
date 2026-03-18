@@ -1,0 +1,6 @@
+{
+  "name": "evolution-timeline-viz",
+  "version": "1.0.0",
+  "description": "Visualize GEP evolution history from log files.",
+  "main": "index.js"
+}

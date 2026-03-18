@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "skills": {
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1771057265198
+    },
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1771057272848
+    },
+    "self-improving-agent": {
+      "version": "1.0.5",
+      "installedAt": 1771148237270
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1771407670775
+    },
+    "peekaboo": {
+      "version": "1.0.0",
+      "installedAt": 1771504624514
+    },
+    "memory-hygiene": {
+      "version": "1.0.0",
+      "installedAt": 1772169303093
+    },
+    "token-optimizer": {
+      "version": "1.0.18",
+      "installedAt": 1772169314604
+    },
+    "qmd": {
+      "version": "1.0.0",
+      "installedAt": 1772169381103
+    },
+    "clawrouter": {
+      "version": "0.10.5",
+      "installedAt": 1772684299063
+    },
+    "capability-evolver": {
+      "version": "1.32.1",
+      "installedAt": 1773719278838
+    },
+    "evolver": {
+      "version": "1.32.2",
+      "installedAt": 1773829247634
+    },
+    "feishu-evolver-wrapper": {
+      "version": "1.7.1",
+      "installedAt": 1773829256097
+    }
+  }
+}
