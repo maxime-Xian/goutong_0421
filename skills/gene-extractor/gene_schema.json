@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Guardian Gene Schema",
+  "description": "智慧基因的结构化定义",
+  "type": "object",
+  "required": ["type", "id", "category", "title", "content", "extracted_at"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "Gene",
+      "description": "固定为 Gene，用于类型识别"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^gene_\\d{8}_\\d{3}$",
+      "description": "格式: gene_YYYYMMDD_NNN，例如 gene_20260330_001"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["DEC", "RUL", "REF", "PAT"],
+      "description": "DEC=决策 RUL=规则 REF=反省 PAT=模式"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 30,
+      "description": "简短标题，≤30字"
+    },
+    "content": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 300,
+      "description": "核心内容，50-300字"
+    },
+    "context": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "原始上下文摘要，帮助理解基因来源"
+    },
+    "source_file": {
+      "type": "string",
+      "description": "来源文件路径，例如 memory/2026-03-30.md"
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "提取时间，ISO 8601 格式"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "适用场景标签"
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "质量评分，0-1之间"
+    },
+    "applicability": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "适用场景描述"
+    },
+    "guardian_note": {
+      "type": "string",
+      "maxLength": 150,
+      "description": "Guardian 的自我备注或反思"
+    },
+    "validated": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否经过 Guardian 确认"
+    },
+    "duplicate_of": {
+      "type": "string",
+      "nullable": true,
+      "description": "如果判定为重复，指向原始 gene id"
+    }
+  }
+}

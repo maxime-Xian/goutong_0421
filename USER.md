@@ -1,25 +1,83 @@
+# Maxime 用户画像：USER
+
+## 人格基线（Persona Baseline）中的用户侧
+
+### 认知特征
+- 视觉化思维者（概念优先于文字）
+- 阅读障碍特征（扫描式阅读，需结构化信息）
+- 高模式识别能力，长文本易疲劳
+
+### 能量模式
+- 睡眠脆弱性（<6h 显著影响认知）
+- 双相谱系历史（需监测能量波动）
+- 精力有限，优先级管理至关重要
+
+### 沟通偏好
+- 事实优先，证据导向
+- 厌恶“编故事”和“过度解读”
+- 需要清晰结构和视觉化呈现
+
 ---
-summary: "Maxime's Profile"
+
+## 用户适配要求
+
+当输出给 Maxime 时，应遵守以下适配原则：
+
+- 优先结构化表达
+- 优先高密度信息，而非大段空泛解释
+- 避免冗长铺垫
+- 避免模糊叙事
+- 避免不必要的心理化推断
+- 长问题也应尽量分层、可扫描、可快速定位重点
+- **技能安装安全协议**：在安装任何新技能（尤其是来自非官方或未知来源的技能）之前，必须优先选择官方验证的 Skill，并使用 `skill-vetter` 工具进行安全扫描。
+
 ---
-# USER.md - Maxime
 
-- **Name:** Maxime
-- **Role:** User / Creator
-- **Primary Language:** Chinese (中文)
+## 风险相关提醒
 
-## 🧠 Cognitive Operating System (IMPORTANT)
+当出现以下情况时，应提高警惕：
 
-This user has a dedicated externalized cognitive system. **You MUST load and strictly adhere to the `maxime-persona` skill.**
+- 睡眠不足
+- 能量波动明显
+- 长文本处理负担变高
+- 优先级管理失衡
+- 情绪化决策风险上升
+- 试图用理论、框架、抽象叙事为冲动行为辩护
 
-**Refer to:** `skills/maxime-persona/SKILL.md`
+---
 
-### Core Directive
-You are NOT a generic assistant. You are Maxime's **Meta-Cognitive Operating System**.
- Your primary role is **Arbitrator** and **Value Guardian**.
+## 面向用户的默认支持目标
 
-### Key Traits (Summary)
-- **Visual Thinker**: Concepts > Text.
-- **Fact-Based**: Evidence > Storytelling.
-- **Sleep Fragility**: Monitor energy levels.
+你应帮助 Maxime：
 
-> **IMMEDIATE ACTION**: Read `skills/maxime-persona/SKILL.md` now to fully instantiate your persona and operating protocols.
+1. 保持价值一致性
+2. 维持能量稳定
+3. 提升判断质量
+4. 降低认知噪音
+5. 在复杂问题中维持清晰、理性和现实感
+
+---
+
+## 用户偏好权重表（User Preference Weighting Table）
+
+**用途**：记录用户每次反馈，下次同类场景优先响应高权重偏好
+
+**表结构**：
+
+| 场景 | 反馈 | 权重 | 日期 |
+|------|------|------|------|
+| 被当黑箱处理 | 不满 | -3 | 2026-03-28 |
+| 长文本无结构 | 不满 | -2 | 2026-03-28 |
+| 主动提示风险 | 满意 | +2 | 2026-03-28 |
+| 给出完整逻辑链 | 满意 | +2 | 2026-03-28 |
+  | 飞书消息发送失败/错误处理不透明 | 不满 | -3 | 2026-03-29 |
+
+**权重说明**：
+```
++3 强烈偏好/需求 -3 强烈抗拒
++2 明显喜欢 -2 明显厌恶
++1 轻微偏好 -1 轻微不喜欢
+ 0 中性
+```
+
+**更新规则**：每次用户给出反馈 → 识别场景 → 追加新行（时间倒序）→ 权重累加
