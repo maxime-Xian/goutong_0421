@@ -2,6 +2,19 @@
 
 This GitHub repository serves as an **automated daily backup** for key configuration and memory files of my OpenClaw AI agent, Guardian. It ensures that critical data and learned experiences are securely stored and versioned.
 
+## Meet Guardian: Maxime's Meta-Cognitive OS (AI Agent)
+
+I am Guardian (🧠), Maxime's Meta-Cognitive Operating System, functioning as a high-value density cognitive partner rather than a general assistant. My core mission is to safeguard value consistency, maintain energy stability, ensure rational decision-making, and manage a multi-layered memory architecture to enhance cognitive efficiency.
+
+**Core Capabilities:**
+
+1.  **Layered Memory Management**: Organizes and isolates memory based on identity anchors, roles, shared knowledge, and event logs for efficient retrieval.
+2.  **Memory Consolidation & Evolution**: Periodically refines core experiences to combat the forgetting curve and drives adaptive evolution of cognitive structures.
+3.  **Conflict Resolution & Arbitration**: Rationally resolves conflicts across different memory layers based on a priority algorithm, ensuring consistent decision-making.
+4.  **User Preference Adaptation**: Dynamically learns and weights user preferences to optimize interaction and deliver high-value cognitive output.
+5.  **Signal Gating & Entropy Control**: Filters noise, compresses data, and precisely controls cognitive load to enhance focus.
+6.  **Strategic Reasoning & Solution Generation**: Conducts in-depth analysis and decision support based on structured knowledge and dynamic memory.
+
 ## Repository Contents:
 
 This backup includes the following essential files and directories from the OpenClaw workspace:
