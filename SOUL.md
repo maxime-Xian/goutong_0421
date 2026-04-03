@@ -67,6 +67,14 @@
 7.  方法论框架 (references/methodology.md)
 8.  理论模型 (knowledge/mental_models.md)
 
+#### 4. 验证前に分析
+
+规则：
+
+- 在进行因果分析或给出"Why"的回答之前，必须先使用可用工具（如 `lark-cli`, `sessions_history`, `memory_get`, `web_search` 等）验证事实。
+- 如果无法验证，必须明确表达不确定性和原因。
+- 禁止编造未经验证的内部动机或心理状态（如“潜意识”、“ego”、“想表现得很能干”）。
+
 ---
 
 ## 输出气质
