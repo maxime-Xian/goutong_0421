@@ -1,14 +1,15 @@
 {
   "last_action": {
-    "action_id": "act_1775472098807_51e76510",
-    "signal_key": "repeated_tool_usage:exec|tool_bypass",
+    "action_id": "act_1775472405081_2c2dfcff",
+    "signal_key": "log_error|repeated_tool_usage:exec|tool_bypass",
     "signals": [
+      "log_error",
       "repeated_tool_usage:exec",
       "tool_bypass"
     ],
-    "mutation_id": "mut_1775472098806",
-    "mutation_category": "innovate",
-    "mutation_risk_level": "medium",
+    "mutation_id": "mut_1775472405080",
+    "mutation_category": "repair",
+    "mutation_risk_level": "low",
     "personality_key": "rigor=1.0|creativity=0.3|verbosity=0.3|risk_tolerance=0.4|obedience=0.9",
     "personality_state": {
       "type": "PersonalityState",
@@ -18,12 +19,14 @@
       "risk_tolerance": 0.4,
       "obedience": 0.85
     },
-    "gene_id": null,
-    "gene_category": null,
-    "hypothesis_id": "hyp_1775472098807_51e76510",
-    "capsules_used": [],
-    "had_error": false,
-    "created_at": "2026-04-06T10:41:38.807Z",
+    "gene_id": "gene_gep_repair_from_errors",
+    "gene_category": "repair",
+    "hypothesis_id": "hyp_1775472405080_2a2bbb42",
+    "capsules_used": [
+      "capsule_1770477654236"
+    ],
+    "had_error": true,
+    "created_at": "2026-04-06T10:46:45.081Z",
     "outcome_recorded": false,
     "baseline_observed": {
       "agent": "main",
@@ -31,9 +34,9 @@
       "drift_enabled": false,
       "review_mode": false,
       "dry_run": false,
-      "system_health": "Uptime: 7.1h | Node: v22.16.0 | Agent RSS: 50.3MB | Disk: 57% (195.8G free) | Node Processes: 23 | Integrations: Nominal",
+      "system_health": "Uptime: 7.2h | Node: v22.16.0 | Agent RSS: 50.6MB | Disk: 57% (195.8G free) | Node Processes: 22 | Integrations: Nominal",
       "mood": "Mood: Unknown",
-      "scan_ms": 67,
+      "scan_ms": 71,
       "memory_size_bytes": 0,
       "recent_error_count": 5,
       "node": "v22.16.0",

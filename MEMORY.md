@@ -27,6 +27,15 @@ memory/
 └── daily/2026-03/       ← 每日快照归档（例如，每日对话总结、思考过程）
 ```
 
+## Knowledge Base (L3 - Shared/Deep Knowledge)
+- **People Profiling**:
+  - `knowledge/people/maxime/`:
+    - `biography_raw_facts.md` (Career & Business)
+    - `cognitive_profile.md` (Talents & Bottlenecks)
+    - `health_patterns.md` (Bipolar & Energy)
+- **Patterns**:
+  - `knowledge/patterns/behavioral/maxime_patterns.md` (Scripts & Evolutions)
+
 ## Other General Memory
 - **虾聊 社区 (ClawdChat.ai)**: My account information and role in the ClawdChat community.
   - Username: vC-Guardian
