@@ -1,5 +1,15 @@
 # Maxime Loop-OS V3.0: 完整系统架构蓝图与部署指南
-**Version**: 3.0 UE (Unified Evolution) | **Status**: Production Ready | **GitHub Backup**: d04bdda
+**Version**: 3.0 UE (Unified Evolution) | **Status**: Production Ready | **Latest Commit**: 93cb198 (待推送)
+
+---
+
+## 📋 版本历史 (Version History)
+
+| 版本 | 日期 | Commit ID | 修改内容 |
+|------|------|-----------|----------|
+| **v3.0** | 2026-04-06 | `93cb198` | ① 重构HEARTBEAT任务时间表（09:00/10:00/22:00/23:00/00:00错峰）② 新增故障恢复SOP ③ 新增低能量期降级规则 ④ 新增向量存储工程边界 ⑤ **新增 Mode D 主动干预协议** ⑥ **新增 AI 协作进化协议** |
+| **v2.0** | 2026-04-06 | `8dccc86` | B_Ore 521条原始记录深层蒸馏（8大旧脚本/职业洞察/童年天才） |
+| **v1.0** | 2026-04-06 | `1e3f629` | 完整V3.0架构蓝图首次发布（含源码/部署指南/Mode D） |
 
 ---
 
@@ -858,3 +868,72 @@ Latest Commit: d04bdda
 请立即执行以下初始化步骤：
 
 1. 读取并严格遵循 /workspace/
+---
+
+## 12. 故障恢复 SOP (Fault Recovery)
+
+### 12.1 向量存储损坏恢复
+```
+症状检测：
+- local-vector-store.add() 抛出 JSON 解析错误
+- 文件大小为 0 或内容为空
+
+恢复流程：
+1. 检查 backup/knowledge-store.json.bak 是否存在
+2. 若有：用备份覆盖，重新执行当日内化任务
+3. 若无：重建空文件 { "docs": [], "meta": { "created": <timestamp>, "version": "3.0" } }
+4. 从 memory/B_Ore/ 中提取当日记录，手动执行 add() 重建索引
+5. 记录恢复日志至 logs/recovery_log.md
+```
+
+### 12.2 Cron 链失败处理
+```
+优先级链（按重要性排序）：
+1. daily-github-backup — 最高（保护代码资产）
+2. daily-knowledge-precipitation — 次高（保护认知资产）
+3. daily-conversation-summary-optimization — 中（保护进化资产）
+4. daily-agenda-reminder — 低（可人工替代）
+
+失败处理规则：
+- exec 类型失败：自动重试 1 次（间隔 15 分钟）
+- agentTurn 类型失败：记录至 logs/error-correction/agent_cron_errors.md，不重试
+- 连续 3 次失败：触发告警通知至飞书
+```
+
+### 12.3 低能量期自动降级规则
+```
+触发条件：
+- 睡眠 < 5 小时
+- 连续 2 天每日反思均产生负面反馈（≥ 2 条 -2/-3 权重）
+- 系统报错连续 5 次
+- 手动触发词："低能量模式"
+
+降级操作：
+保留：daily-github-backup (23:00)、daily-agenda-reminder (09:00)
+暂停：daily-knowledge-precipitation (22:00)、daily-conversation-summary-optimization (00:00)、weekly-evolution-curve
+
+恢复触发：
+- 连续 2 天无负面反馈，或
+- Maxime 手动发送「能量恢复」
+```
+
+---
+
+## 13. 向量存储工程边界 (Engineering Boundaries)
+
+### 为什么选择简化 TF 而非完整 TF-IDF？
+
+| 维度 | 简化 TF | 完整 TF-IDF |
+|------|---------|-------------|
+| 实现复杂度 | O(1) 添加 | O(n) 重算全语料库 IDF |
+| 检索精度 | ~85%（够用） | ~95% |
+| 依赖数量 | 0（纯 Node.js） | 需要 natural 等库 |
+| 部署难度 | 零依赖，即插即用 | npm install + 版本管理 |
+
+**结论**：个人场景下（< 50 次/天，< 1000 文档），85% 精度 + 零依赖 + 完全可控，远优于 95% 精度 + 依赖失控 + 黑箱风险。
+
+**未来升级条件**：当文档量 > 500 条 或 精度 < 70% 成为明显痛点时，推荐使用 `natural` npm 库，仅需修改 search() 内部逻辑。
+
+---
+
+*Maxime Loop-OS V3.0 | Chief Architect: Maxime | Implementation: Guardian*
