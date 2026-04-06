@@ -1,183 +1,193 @@
 /**
- * local-vector-store v2.1
- * A lightweight TF-IDF local knowledge base with:
- * - Bigram Chinese tokenization
- * - IDF weighting + cosine normalization (with floor to handle small corpus)
- * - Auto .bak backup on write
+ * local-vector-store - Maxime Loop-OS V3.0 优化版
+ * 改进点：更好中文分词 + IDF + Cosine Similarity
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const STORE_PATH = path.join(process.cwd(), 'memory/knowledge-store.json');
+const STORE_PATH = path.join(process.cwd(), 'knowledge/knowledge-store.json');
+
+let idfCache = null;  // 全局 IDF 缓存
 
 function ensureStore() {
-  if (!fs.existsSync(path.dirname(STORE_PATH))) {
-    fs.mkdirSync(path.dirname(STORE_PATH), { recursive: true });
-  }
+  const dir = path.dirname(STORE_PATH);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   if (!fs.existsSync(STORE_PATH)) {
-    fs.writeFileSync(STORE_PATH, JSON.stringify({ docs: [], idf: {} }, null, 2));
+    fs.writeFileSync(STORE_PATH, JSON.stringify({ docs: [], meta: { created: Date.now(), version: '3.1' } }, null, 2));
   }
 }
 
-// P1: Backup before any write
-function backup() {
-  try {
-    if (fs.existsSync(STORE_PATH)) {
-      const bak = STORE_PATH + '.bak';
-      fs.copyFileSync(STORE_PATH, bak);
-    }
-  } catch (e) {
-    console.error('[VectorStore] Backup failed:', e.message);
-  }
-}
-
-// P0: Bigram Chinese tokenization + English
 function tokenize(text) {
-  const str = text.toLowerCase();
-  // Chinese bigrams (2-char windows)
-  const bigrams = str.match(/[\u4e00-\u9fa5]{2}/g) || [];
-  // Chinese single chars (needed for 1-char matches)
-  const chineseSingle = str.match(/[\u4e00-\u9fa5]/g) || [];
-  // English words
-  const english = (str.match(/[a-z0-9_]+/g) || []).map(t => t.toLowerCase());
-  return [...new Set([...bigrams, ...chineseSingle, ...english])];
+  if (!text) return [];
+  text = text.toLowerCase();
+  
+  // 英文单词
+  const english = (text.match(/[a-zA-Z0-9_]+/g) || []);
+  
+  // 中文：bigram (两个字符) + 单字符
+  const chineseBigram = text.match(/[\u4e00-\u9fa5]{2}/g) || [];
+  const chineseSingle = text.match(/[\u4e00-\u9fa5]/g) || [];
+  
+  const tokens = [...english, ...chineseBigram, ...chineseSingle];
+  
+  // 去重 + 过滤太短的
+  return [...new Set(tokens)].filter(t => t.length > 0 && t !== ' ');
 }
 
-function getTF(tokens) {
-  const counts = {};
-  tokens.forEach(t => { counts[t] = (counts[t] || 0) + 1; });
-  const total = tokens.length;
-  const tf = {};
-  for (const t in counts) { tf[t] = counts[t] / total; }
-  return tf;
-}
-
-// P0: Compute IDF with floor to handle small corpus
+/** 计算全局 IDF */
 function computeIDF(docs) {
   const N = docs.length;
-  const idf = {};
+  const df = {};
   docs.forEach(doc => {
-    new Set(doc.tokens).forEach(t => {
-      idf[t] = (idf[t] || 0) + 1;
+    const uniqueTokens = new Set(doc.tokens || []);
+    uniqueTokens.forEach(t => {
+      df[t] = (df[t] || 0) + 1;
     });
   });
-  for (const t in idf) {
-    // Floor of 0.1 prevents negative IDF with N=1 corpus
-    idf[t] = Math.max(Math.log(N / (idf[t] + 1)), 0.1);
+  const idf = {};
+  for (const t in df) {
+    idf[t] = Math.log((N + 1) / (df[t] + 1)) + 1;  // 平滑 IDF
   }
   return idf;
 }
 
-function getDocNorm(doc) {
+/** 计算向量范数（用于 cosine） */
+function norm(tfidf) {
   let sum = 0;
-  for (const t in doc.tf) { sum += doc.tf[t] * doc.tf[t]; }
-  return Math.sqrt(sum);
+  for (const val of Object.values(tfidf)) sum += val * val;
+  return Math.sqrt(sum) || 1;
 }
+
+function getTFIDF(tokens, idf) {
+  const tf = {};
+  tokens.forEach(t => tf[t] = (tf[t] || 0) + 1);
+  const total = tokens.length || 1;
+  const tfidf = {};
+  for (const t in tf) {
+    if (idf[t]) {
+      tfidf[t] = (tf[t] / total) * idf[t];
+    }
+  }
+  return tfidf;
+}
+
+// ─────────────────────────────────────────────────────────────
+// 公开 API
+// ─────────────────────────────────────────────────────────────
 
 function add(id, content, metadata = {}) {
   ensureStore();
-  backup();
-
   const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+  
   const tokens = tokenize(content);
   const doc = {
     id,
     content,
     tokens,
-    tf: getTF(tokens),
-    metadata,
+    metadata: {
+      type: metadata.type || 'unknown',
+      tags: metadata.tags || [],
+      year: metadata.year,
+      risk_level: metadata.risk_level,
+      category: metadata.category,
+      source: metadata.source || 'L3',
+      ...metadata
+    },
     timestamp: Date.now()
   };
 
   const idx = data.docs.findIndex(d => d.id === id);
-  if (idx !== -1) {
-    data.docs[idx] = doc;
-  } else {
-    data.docs.push(doc);
-  }
+  if (idx !== -1) data.docs[idx] = doc;
+  else data.docs.push(doc);
 
-  data.idf = computeIDF(data.docs);
+  // 更新 IDF 缓存
+  idfCache = null;
+
   fs.writeFileSync(STORE_PATH, JSON.stringify(data, null, 2));
   return doc;
 }
 
-function search(query, limit = 5) {
+function search(query, limit = 8, filters = {}) {
   ensureStore();
   const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+  
+  if (!idfCache) idfCache = computeIDF(data.docs);
+  const idf = idfCache;
+
   const qTokens = tokenize(query);
-  const qTf = getTF(qTokens);
-  const idf = data.idf || computeIDF(data.docs);
+  const qTFIDF = getTFIDF(qTokens, idf);
+  const qNorm = norm(qTFIDF);
 
-  let qNormSum = 0;
-  for (const t in qTf) { qNormSum += qTf[t] * qTf[t]; }
-  const qNorm = Math.sqrt(qNormSum);
-
-  const results = data.docs.map(doc => {
-    let score = 0;
-    for (const term in qTf) {
-      if (doc.tf[term]) {
-        score += qTf[term] * doc.tf[term] * (idf[term] || 0.1);
+  let results = data.docs
+    .filter(doc => {
+      if (filters.type && doc.metadata.type !== filters.type) return false;
+      if (filters.tags && filters.tags.length > 0) {
+        const hasTag = filters.tags.some(tag => (doc.metadata.tags || []).includes(tag));
+        if (!hasTag) return false;
       }
-    }
-    const docNorm = getDocNorm(doc);
-    if (docNorm > 0 && qNorm > 0) {
-      score = Math.max(score / (docNorm * qNorm), 0); // cosine, no negative
-    } else {
-      score = 0;
-    }
-    return { id: doc.id, content: doc.content, metadata: doc.metadata, score };
-  });
+      if (filters.risk_level && doc.metadata.risk_level !== filters.risk_level) return false;
+      if (filters.year && doc.metadata.year !== filters.year) return false;
+      return true;
+    })
+    .map(doc => {
+      const dTFIDF = getTFIDF(doc.tokens || [], idf);
+      const dNorm = norm(dTFIDF);
 
-  return results
-    .filter(r => r.score > 0)
+      // Cosine Similarity
+      let dot = 0;
+      for (const term in qTFIDF) {
+        if (dTFIDF[term]) dot += qTFIDF[term] * dTFIDF[term];
+      }
+      const score = (dot / (qNorm * dNorm)) || 0;
+
+      return { 
+        id: doc.id, 
+        content: doc.content.substring(0, 200) + '...', 
+        metadata: doc.metadata, 
+        score,
+        tokens: doc.tokens
+      };
+    })
+    .filter(r => r.score > 0.05)  // 过滤低分
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
+
+  return results;
+}
+
+function remove(id) {
+  ensureStore();
+  const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+  const originalLength = data.docs.length;
+  data.docs = data.docs.filter(d => d.id !== id);
+  if (data.docs.length < originalLength) {
+    idfCache = null;
+    fs.writeFileSync(STORE_PATH, JSON.stringify(data, null, 2));
+    return true;
+  }
+  return false;
 }
 
 function stats() {
-  try {
-    ensureStore();
-    const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
-    return {
-      total_docs: data.docs.length,
-      total_tokens: data.docs.reduce((s, d) => s + d.tokens.length, 0),
-      idf_terms: Object.keys(data.idf || {}).length,
-      store_size_bytes: fs.statSync(STORE_PATH).size
-    };
-  } catch (e) {
-    return { error: e.message };
-  }
-}
-
-// Self-test
-function selftest() {
-  const { add, search, stats } = require('./index.js');
-  console.log('=== local-vector-store v2.1 self-test ===');
-
-  // Clear existing
+  ensureStore();
   const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
-  const originalCount = data.docs.length;
-
-  add('selftest-1', 'OpenClaw 是用于构建 AI 代理的开源框架。');
-  add('selftest-2', 'Mode D 主动干预协议用于处理高压决策场景。');
-  add('selftest-3', 'Bigram 分词可以提升中文检索准确率。团队建设很重要。');
-
-  console.log('\nSearch: "中文分词团队"');
-  console.log(JSON.stringify(search('中文分词团队'), null, 2));
-
-  console.log('\nSearch: "OpenClaw AI"');
-  console.log(JSON.stringify(search('OpenClaw AI'), null, 2));
-
-  console.log('\nStats:', stats());
-
-  console.log('\n=== Self-test PASSED ===');
+  const byType = {};
+  const byRisk = {};
+  data.docs.forEach(doc => {
+    const type = doc.metadata.type || 'unknown';
+    byType[type] = (byType[type] || 0) + 1;
+    if (doc.metadata.risk_level) {
+      byRisk[doc.metadata.risk_level] = (byRisk[doc.metadata.risk_level] || 0) + 1;
+    }
+  });
+  return {
+    total: data.docs.length,
+    byType,
+    byRisk,
+    storePath: STORE_PATH,
+    version: data.meta?.version || '3.1'
+  };
 }
 
-module.exports = {
-  add,
-  search,
-  stats,
-  selftest,
-  main: () => selftest()
-};
+module.exports = { add, search, remove, stats, tokenize };
