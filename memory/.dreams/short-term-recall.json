@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-06T08:38:26.563Z",
+  "entries": {
+    "memory:memory/2026-04-03.md:1:21": {
+      "key": "memory:memory/2026-04-03.md:1:21",
+      "path": "memory/2026-04-03.md",
+      "startLine": 1,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "# Daily Memory - 2026-04-03 ## 📊 System Status - **Feishu Channels**: Successfully fixed. Gateway restarted. Two bots configured: `openclaw_mac_feishu` (default) and `bot_b_feishu`. - **Authorization**: Attempted calendar/task auth for Maxime; links were refreshed after expiration. ## 🛠️ Key Actions & Decisions - **Feishu Configuration**: Manually edited `openclaw.json` to correctly structure `channels.feishu.accounts`. - **Project Evaluation**: Evaluated `karpathy/autoresearch`. Recommended **not to install** due to hardware mismatch (NVIDIA GPU requirement) and misalignment with current productivity goals. - **Mental Model Correction**: Addressed user feedback regarding \"confabulated e",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "totalScore": 0.9172356337308882,
+      "maxScore": 0.45938082039356226,
+      "firstRecalledAt": "2026-04-06T07:08:09.125Z",
+      "lastRecalledAt": "2026-04-06T08:38:26.563Z",
+      "queryHashes": [
+        "7bc8f16d1b5f",
+        "449caff7b23e"
+      ],
+      "recallDays": [
+        "2026-04-06"
+      ],
+      "conceptTags": [
+        "gateway",
+        "openclaw-mac-feishu",
+        "bot-b-feishu",
+        "calendar/task",
+        "openclaw.json",
+        "channels.feishu.accounts",
+        "karpathy/autoresearch",
+        "system"
+      ]
+    },
+    "memory:memory/2026-04-03.md:17:25": {
+      "key": "memory:memory/2026-04-03.md:17:25",
+      "path": "memory/2026-04-03.md",
+      "startLine": 17,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "- Created `proactive-learning-protocol.md`: Mandatory fact-check before any root cause analysis. - Created `THINKING_PATTERNS.md`: Defined Patterns F (skipping verification) and G (anthropomorphic narrative) with triggers and intervention strategies. - **Intervention**: If unverified analysis is detected, the user or system says \"Pattern F\", triggering a pause for verification. ## 📈 Optimization - Updated `USER.md` with \"Skill Installation Safety Protocol\" and \"Causal Analysis Pre-Verification\" behavior rules. --- *Memory captured for Daily Evolution Summary and Knowledge Precipitation.*",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "totalScore": 0.899256083369255,
+      "maxScore": 0.45422011315822597,
+      "firstRecalledAt": "2026-04-06T07:08:09.125Z",
+      "lastRecalledAt": "2026-04-06T08:38:26.563Z",
+      "queryHashes": [
+        "7bc8f16d1b5f",
+        "449caff7b23e"
+      ],
+      "recallDays": [
+        "2026-04-06"
+      ],
+      "conceptTags": [
+        "proactive-learning-protocol.md",
+        "fact-check",
+        "thinking-patterns.md",
+        "user.md",
+        "pre-verification",
+        "created",
+        "proactive",
+        "learning"
+      ]
+    }
+  }
+}

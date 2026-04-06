@@ -35,19 +35,19 @@
     },
     "clawrouter": {
       "version": "0.10.5",
-      "installedAt": 1772684299063
+      "installedAt": 1775455500694
     },
     "capability-evolver": {
       "version": "1.32.1",
       "installedAt": 1773719278838
     },
     "evolver": {
-      "version": "1.35.0",
-      "installedAt": 1774172582737
+      "version": "1.41.0",
+      "installedAt": 1775455509454
     },
     "feishu-evolver-wrapper": {
       "version": "1.7.1",
-      "installedAt": 1774172586774
+      "installedAt": 1775455512874
     },
     "evermind-ai-everos": {
       "version": "1.4.0",
@@ -88,6 +88,22 @@
     "github-repo-search": {
       "version": "1.0.0",
       "installedAt": 1774961508507
+    },
+    "feishu-doc": {
+      "version": "1.2.7",
+      "installedAt": 1775222471571
+    },
+    "mckinsey-research": {
+      "version": "2.1.0",
+      "installedAt": 1775276684340
+    },
+    "mckinsey-presentation-generator": {
+      "version": "1.0.0",
+      "installedAt": 1775276693549
+    },
+    "mbb-strategist": {
+      "version": "1.0.0",
+      "installedAt": 1775276703298
     }
   }
 }
