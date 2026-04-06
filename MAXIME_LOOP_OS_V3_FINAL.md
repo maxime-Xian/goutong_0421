@@ -1,66 +1,133 @@
-# Maxime Loop-OS: 统一进化架构全景指南 (V3.0 Unified Edition)
+# Maxime Loop-OS V3.0: 认知闭环架构全景图 (Standard Implementation)
 
-## 0. 架构愿景 (Vision)
-构建一个具备**“极速反应”**（肌肉记忆）与**“深度内省”**（专家系统）双重能力的认知操作系统。通过 A-E 记忆漏斗实现自动熵减，确保智能体随时间推移不断“长脑子”，而非仅仅堆积数据。
-
----
-
-## 1. 物理层级与文件职责 (The Layers)
-
-### LAYER 1：治理层 (Identity & Protocol) — "我是谁，我怎么做"
-这是系统的“宪法”，决定了 Agent 的人格基线和最高原则。
-- **SOUL.md**：核心协议。定义仲裁者角色、诚实原则、禁止行为（如：禁止过度解读、禁止未经请求的情感分析）。
-- **USER.md**：用户画像。记录 Maxime 的认知特征（视觉思维）、能量模式（双相周期）及偏好权重表（反馈驱动的自进化）。
-- **AGENTS.md**：调度中枢。定义问题分类（简单/复杂/状态）及对应的执行模式（模式 A/B/C）。
-- **HEARTBEAT.md**：心跳协议。配置 Cron 定时任务，驱动“记忆固化”与“系统巡检”的自动化。
-- **TOOLS.md**：硬件适配。存放本地 API 密钥、特定的 CLI 路径及消息渠道配置。
-
-### LAYER 2：流式代谢层 (Stream & Metabolism) — "刚才发生了什么"
-处理实时对话，作为知识内化前的“待处理矿石”。
-- **.dreams/**：潜意识缓存。以 JSON 碎片形式实时记录对话，用于秒级相关性检索（闪念）。
-- **memory/B_Ore/**：背景矿石库。存放 2018-2019 等未经深层加工的原始日志，仅供后台模式识别扫描，不干扰即时决策。
-- **01_RAW_FACTS_RECENT-90D.txt**：近期快照。记录最近 90 天的关键行为、身体状态和核心诉求。
-
-### LAYER 3：结构化资产层 (Knowledge & Experts) — "我学到了什么"
-这是系统最核心的价值中心，按 A-E 漏斗分类存放经过“审计”的知识。
-- **Class A: Internalized (已内化)**：存放经过专家模型验证后的**核心武器**（如：科特迪瓦团队管理体系、Human-AI 协作宪法）。
-- **Class E: Meta-Meta (指挥模型)**：存放系统的**架构参数**（如：ECA v2.2 分层配置、三层循环逻辑）。
-- **knowledge/eca_experts.json**：定义 5 个领域专家（投资/产品/技术/心理/战略），决定高阶决策的质量。
-- **local-vector-store/**：持久化搜索引擎。基于 TF-IDF 将 A 类知识刻录进 `knowledge-store.json`，实现毫秒级“常识”调用。
-
-### LAYER 4：审计与取证层 (Audit & Logs) — "我做过什么"
-确保所有行为可溯源、可修复。
-- **logs/**：行为审计。记录所有执行过的 shell 指令及系统响应。
-- **error-correction/**：错误修复记录。遵循“闭环不过夜”协议，详细记录每次犯错的原因及防复发规则。
+## 0. 系统顶层逻辑 (The Meta-Logic)
+本系统采用 **“三位一体”** 认知闭环架构：
+1. **潜意识层 (.dreams)**：解决“刚才发生了什么”。
+2. **内省层 (Heartbeat)**：解决“我学到了什么”。
+3. **资产层 (A-E Vector Store)**：解决“我如何永久保留智慧”。
 
 ---
 
-## 2. 核心算法流程：认知闭环 (The Cognitive Loop)
+## 1. 物理架构全景 (Physical Map)
 
-### 第一阶段：闪念捕捉 (Dreaming)
-- **输入**：用户发起的每一轮对话。
-- **动作**：系统自动将摘要存入 `.dreams/`。
-- **目的**：确保在长对话中，Agent 能瞬间想起 5 分钟前微小的细节。
+```text
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ LAYER 1 — 治理与身份锚 (Identity & Governance Core) [OS 内核]               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+ 📁 工作区根目录:
+ ├── SOUL.md          ← 核心协议：仲裁者角色、诚实原则、反黑箱行为铁律
+ ├── IDENTITY.md      ← 身份标识：Guardian 元认知框架与自适应进化定位
+ ├── USER.md          ← 用户画像：含视觉思维特征、双相能量模式、偏好权重反馈表
+ ├── AGENTS.md        ← 调度协议：问题分类 (A/B/C) → 执行模式切换逻辑
+ ├── HEARTBEAT.md     ← 自动机配置：Cron 定时任务指令（驱动每日内省与备份）
+ ├── MEMORY.md        ← 记忆索引：账号/凭证索引、多层级记忆物理路径映射图
+ └── TOOLS.md         ← 环境配置：API Keys、特定 CLI 路径、各频道通知设置
 
-### 第二阶段：内省提炼 (Introspection)
-- **触发**：每晚 22:00 (Heartbeat)。
-- **逻辑**：
-    1. 扫描 `.dreams/` 与 `B_Ore/`。
-    2. 调用 **ECA Experts** 进行跨领域审计（例如：心理专家识别“旧脚本触发”，战略专家评估“新想法的 ROI”）。
-    3. **提炼**：将有价值的碎片加工成 A 类或 E 类知识。
-- **淘汰**：无价值噪音在保留 90 天后自动从 L2 蒸发。
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ LAYER 2 — 流式代谢层 (Metabolism & Stream) [动态缓存]                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+ 📁 memory/ 目录结构:
+ ├── .dreams/         ← 潜意识缓存：以 JSON 碎片实时缓存对话，用于秒级闪念检索
+ ├── B_Ore/           ← 原始矿石库：存放 2018-2025 等未经深层加工的原始大段日志
+ ├── RECENT-90D.txt   ← 近期快照：压缩后的最近 90 天关键行为、身体状态、核心诉求
+ └── episodes/        ← 重大事件：API 崩溃、架构大重组等具有里程碑意义的单点记录
 
-### 第三阶段：永久刻录 (Persistence)
-- **动作**：提炼出的 A 类知识自动同步至 `local-vector-store`。
-- **目的**：摆脱 LLM 上下文窗口限制，使 Agent 拥有永久性的“长效记忆”。
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ LAYER 3 — 结构化资产层 (Knowledge & Assets) [永久智慧库]                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+ 📁 knowledge/ 目录结构:
+ ├── 🎯 ECA 认知架构 (Evolving Cognitive Architecture)
+ │   ├── eca_layers.json    ← 分层算力配置：L0执行者 / L1监护人 / L2仲裁者 / L3专家
+ │   ├── eca_experts.json   ← 5大专家：投资、产品、技术、心理、战略模型的触发条件
+ │   └── eca_traps.json     ← 逻辑陷阱库：已识别的思维误区（含逃逸方案）
+ │
+ ├── 🧠 元认知系统 (Meta-Cognition)
+ │   ├── cognitive_profile.md  ← 认知画像：视觉思维、书写障碍、Anomia 等硬件参数
+ │   ├── health_patterns.md    ← 能量模型：双相周期、心脏警报、意志力脚本监控
+ │   └── methodology.md        ← 统一认知方法论：Human-AI 协作宪法、三段式协议
+ │
+ ├── 📐 思维模型库 (Mental Models)
+ │   ├── models.md            ← 193个核心思维模型（第一性原理、二阶思维等）
+ │   └── behavioral_patterns/ ← 长期脚本：掩盖核心决策、行动补偿沟通等模式识别
+ │
+ └── 💾 物理刻录层 (Durable Memory)
+     └── knowledge-store.json ← 本地向量库：基于 TF-IDF 存储的 L3-A 类核心资产
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ LAYER 4 — 审计与闭环层 (Audit & Loop) [可追溯进化]                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+ 📁 logs/ & error-correction/ 目录结构:
+ ├── logs/archive/         ← 历史审计日志：所有 Shell 执行命令与系统反馈的完整记录
+ ├── error-correction/     ← 错误修复：遵循“闭环不过夜”协议，记录类型A/B/C错误归因
+ └── COGNITIVE_BLUEPRINT   ← 架构蓝图：本文件及所有实现源代码的物理备份
+```
 
 ---
 
-## 3. 部署与同步协议 (Deployment & Sync)
+## 2. 核心内化逻辑 (Implementation Source Code)
 
-1. **GitHub 备份**：通过 `/Users/maxime.xian/.openclaw/workspace/backup_workspace.sh` 实现“增量提交”。
-2. **逻辑冲突调解**：遵循 **“项目专属 > 共享知识 > 时间相近”** 的仲裁算法。
-3. **自主演进**：Agent 在检测到 USER.md 的负面反馈时，必须强制触发 `error-correction` 流程，修改 L1/L3 层级的规则，防止同类错误再次发生。
+### A. 长期记忆刻录器 (Local Vector Store)
+文件：`skills/local-vector-store/index.js`
+```javascript
+const fs = require('fs');
+const path = require('path');
+const STORE_PATH = path.join(process.cwd(), 'memory/knowledge-store.json');
+
+function ensureStore() {
+  if (!fs.existsSync(path.dirname(STORE_PATH))) fs.mkdirSync(path.dirname(STORE_PATH), { recursive: true });
+  if (!fs.existsSync(STORE_PATH)) fs.writeFileSync(STORE_PATH, JSON.stringify({ docs: [] }, null, 2));
+}
+
+function tokenize(text) { return text.toLowerCase().match(/\w+/g) || []; }
+
+function getTF(tokens) {
+  const counts = {};
+  tokens.forEach(t => { counts[t] = (counts[t] || 0) + 1; });
+  const tf = {};
+  const total = tokens.length;
+  for (const t in counts) { tf[t] = counts[t] / total; }
+  return tf;
+}
+
+function add(id, content, metadata = {}) {
+  ensureStore();
+  const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+  const tokens = tokenize(content);
+  const doc = { id, content, tokens, tf: getTF(tokens), metadata, timestamp: Date.now() };
+  const idx = data.docs.findIndex(d => d.id === id);
+  if (idx !== -1) data.docs[idx] = doc; else data.docs.push(doc);
+  fs.writeFileSync(STORE_PATH, JSON.stringify(data, null, 2));
+  return doc;
+}
+
+function search(query, limit = 5) {
+  ensureStore();
+  const data = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+  const qTokens = tokenize(query);
+  const qTf = getTF(qTokens);
+  const results = data.docs.map(doc => {
+    let score = 0;
+    for (const term in qTf) { if (doc.tf[term]) score += qTf[term] * doc.tf[term]; }
+    return { id: doc.id, content: doc.content, metadata: doc.metadata, score };
+  });
+  return results.filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, limit);
+}
+
+module.exports = { add, search };
+```
+
+### B. 自动化驱动 JSON (Heartbeat Configuration)
+文件：`HEARTBEAT.md` 任务条目
+```json
+{
+ "name": "daily-cognitive-loop-introspection",
+ "schedule": { "kind": "cron", "expr": "0 22 * * *", "tz": "Asia/Shanghai" },
+ "payload": {
+  "kind": "agentTurn",
+  "message": "【认知内化操作指令】\n1. 调取今日 .dreams/ 碎片与 B_Ore/ 原始日志。\n2. 启动 ECA L3 专家模型（心理+战略）进行双重审计。\n3. 提炼出符合 A类（核心资产）或 E类（系统参数）的高价值结论。\n4. 调用 local-vector-store.add() 刻录至 knowledge-store.json。\n5. 同步更新 USER.md 中的偏好权重表并执行 Git 备份。"
+ }
+}
+```
 
 ---
-*Blueprint Version: 3.0.UEA | Chief Architect: Maxime | Implementation: Guardian*
+*Created by Guardian | System V3.0 Final | Maxime Verified*
