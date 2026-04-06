@@ -1,1 +1,43 @@
-{}
+{
+  "version": "1.0",
+  "description": "ECA Expert Registry — Maps trigger keywords to LLM endpoints and routing logic",
+  "experts": [
+    {
+      "id": "meta-cognition",
+      "name": "元认知专家",
+      "trigger_keywords": ["思维模式", "认知", "判断力", "自我反省", "元认知"],
+      "llm_endpoint": "google/gemini-flash-latest",
+      "capabilities": ["认知偏差检测", "思维模型应用", "决策质量评估"],
+      "description": "处理认知结构、思维定式、推理质量相关问题"
+    },
+    {
+      "id": "energy-management",
+      "name": "能量管理专家",
+      "trigger_keywords": ["能量", "疲劳", "睡眠", "精力", "状态", "恢复"],
+      "llm_endpoint": "google/gemini-flash-latest",
+      "capabilities": ["能量状态评估", "睡眠质量分析", "精力优化建议"],
+      "description": "处理身体能量、休息恢复、状态维护相关问题"
+    },
+    {
+      "id": "mode-d-intervention",
+      "name": "Mode D 干预专家",
+      "trigger_keywords": ["自我攻击", "自责", "逃避", "高压", "冲动决策", "模式"],
+      "llm_endpoint": "google/gemini-flash-latest",
+      "capabilities": ["模式识别", "证据回弹", "逻辑剥离", "强制聚焦"],
+      "description": "Mode D 主动干预的核心触发器路由"
+    },
+    {
+      "id": "knowledge-architecture",
+      "name": "知识架构专家",
+      "trigger_keywords": ["记忆", "知识", "向量", "存储", "A类", "B类", "E类"],
+      "llm_endpoint": "local",
+      "capabilities": ["分层记忆管理", "知识蒸馏", "向量检索", "ECA 分类"],
+      "description": "处理记忆分层、知识管理、向量化存储相关问题"
+    }
+  ],
+  "routing": {
+    "default": "google/gemini-flash-latest",
+    "fallback": "minimax/MiniMax-M2.7",
+    "local_fallback": "local-vector-store"
+  }
+}
