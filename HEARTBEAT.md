@@ -1,150 +1,125 @@
-## Daily Evolution Summary Report (Cron Job)
+
+# HEARTBEAT.md - Maxim Loop-OS V3.0 自动机配置
+
+## 调度原则
+- **错峰执行**：避免同一时间多个重任务竞争资源
+- **轻量优先**：上午使用 systemEvent / exec，晚间使用 agentTurn
+- **失败隔离**：单个任务失败不影响其他任务执行
+
+---
+
+## 每日任务时间表
+
+| 时间 | 任务名 | 类型 | 重量级 | 说明 |
+|------|--------|------|--------|------|
+| 09:00 | daily-agenda-reminder | agentTurn | ⚡轻量 | 生成今日日程摘要 |
+| 10:00 | file-organization-check | systemEvent | ⚡轻量 | 文件整理提醒 |
+| 22:00 | daily-knowledge-precipitation | agentTurn | 🔥重量 | 核心：知识沉淀与内化 |
+| 23:00 | daily-github-backup | exec | ⚡轻量 | Git 增量备份 |
+| 00:00 | daily-conversation-summary-optimization | agentTurn | 🔥重量 | 自我反思与风格优化 |
+
+---
+
+## 一、日常任务详情
+
+### 1. daily-agenda-reminder (09:00)
 
 ```json
 {
- "name": "daily-evolution-summary",
- "schedule": { "kind": "cron", "expr": "0 22 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "请先运行 Gene Extractor 模块，提取今日智慧基因：`node ~/.openclaw/workspace/skills/gene-extractor/extract.js`。
-
-然后根据今日的聊天记录 (sessions_history(sessionKey=\"user:ou_7a641115c7e34065b030957e21fd80d5\", limit=200)) 和 memory/YYYY-MM-DD.md (将 YYYY-MM-DD 替换为今天的日期)，生成每日进化总结报告。报告格式如下：
-
-📅 YYYY-MM-DD 每日进化总结
-## 今日完成事项
-| 类别 | 内容 |
-|---|---|
-| 早晨简报 | ... |
-| 架构更新 | ... |
-| 自我批判 | ... |
-## 关键教训（来自用户反馈）
-问题 N — ...
-- 教训：...
-## 马克西姆思维盲区分析
-🕳️ 误区 N：...
-🧠 思维模型应用
-📈 元认知提升
-
-请将报告发送到飞书。请注意，今天的日期是 2026-03-30。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
+  "name": "daily-agenda-reminder",
+  "schedule": { "kind": "cron", "expr": "0 9 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "请使用 lark-workflow-standup-report 技能，为我生成今日的重点日程和未完成任务摘要。",
+    "model": "google/gemini-flash-latest"
+  },
+  "delivery": { "mode": "announce" }
 }
-```
-
-## Monthly Memory Consolidation (Cron Job)
-
-```json
+2. file-organization-check (10:00)
+Copy
 {
- "name": "memory-consolidation",
- "schedule": { "kind": "cron", "expr": "0 6 28-31 * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "exec",
-  "command": "cd skills/evomap && node index.js"
- },
- "delivery": { "mode": "announce" }
+  "name": "file-organization-check",
+  "schedule": { "kind": "cron", "expr": "0 10 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "【文件整理提醒】请检查档案库（Files）是否需要整理归类。"
+  },
+  "delivery": { "mode": "announce" }
 }
-```
-
-## Daily Agenda Reminder (Cron Job)
-
-```json
+3. daily-knowledge-precipitation (22:00) — 核心内化任务
+Copy
 {
- "name": "daily-agenda-reminder",
- "schedule": { "kind": "cron", "expr": "0 9 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "请使用 lark-workflow-standup-report 技能，为我生成今日的重点日程和未完成任务摘要。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
+  "name": "daily-knowledge-precipitation",
+  "schedule": { "kind": "cron", "expr": "0 22 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "【认知内化操作指令】\n1. 调取今日 .dreams/ 碎片与 B_Ore/ 原始日志。\n2. 启动 ECA L3 专家模型进行双重审计。\n3. 提炼 A类 或 E类 高价值结论。\n4. 调用 local-vector-store.add() 刻录。\n5. 同步更新 USER.md。",
+    "model": "google/gemini-flash-latest",
+    "timeoutSeconds": 300
+  },
+  "delivery": { "mode": "announce" }
 }
-```
-
-## Daily Conversation Summary and Style Optimization (Cron Job)
-
-```json
+4. daily-github-backup (23:00)
+Copy
 {
- "name": "daily-conversation-summary-optimization",
- "schedule": { "kind": "cron", "expr": "0 22 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "【每日自我反思与进化】请启动自我反思任务：\n1.  **回顾**：翻看过去 24 小时的聊天记录 (sessions_history(sessionKey=\"user:ou_7a641115c7e34065b030957e21fd80d5\", limit=200))，识别用户 Max X 有哪些不满意的地方（根据 USER.md 中的偏好权重表，重点关注负面反馈）。\n2.  **优化**：\n    *   根据识别到的不满意之处，自动优化我的灵魂档案 (SOUL.md) 和用户画像 (USER.md) 中的相关偏好权重或行为准则。\n    *   反思并优化我的回复风格，以确保 Max X 感到更舒服。\n3.  **日志**：在 `/Users/maxime.xian/.openclaw/workspace/logs/evolution_log_YYYY-MM-DD.md` 中记录今天学到的关键教训和进行的优化，并告诉我今天的进化内容。\n请将 YYYY-MM-DD 替换为今天的日期。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
+  "name": "daily-github-backup",
+  "schedule": { "kind": "cron", "expr": "0 23 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "exec",
+    "command": "/Users/maxime.xian/.openclaw/workspace/backup_workspace.sh"
+  },
+  "delivery": { "mode": "announce" }
 }
-```
-
-## Daily File Organization Check (Cron Job)
-
-```json
+5. daily-conversation-summary-optimization (00:00)
+Copy
 {
- "name": "file-organization-check",
- "schedule": { "kind": "cron", "expr": "0 11 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "systemEvent",
-  "text": "【文件整理提醒】请检查档案库（Files）是否需要整理归类。如果需要自动整理，请告知我具体的整理规则（例如，哪些文件类型归到哪里）。"
- },
- "delivery": { "mode": "announce" }
+  "name": "daily-conversation-summary-optimization",
+  "schedule": { "kind": "cron", "expr": "0 0 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "【每日自我反思与进化】\n1. 回顾过去 24 小时聊天记录，识别用户不满意之处。\n2. 自动优化 SOUL.md 和 USER.md。\n3. 在 logs/evolution_log_YYYY-MM-DD.md 中记录关键教训。",
+    "model": "google/gemini-flash-latest",
+    "timeoutSeconds": 300
+  },
+  "delivery": { "mode": "announce" }
 }
-```
-
-## Daily Knowledge Precipitation (Cron Job)
-
-```json
+6. weekly-evolution-curve (周日 23:30)
+Copy
 {
- "name": "daily-knowledge-precipitation",
- "schedule": { "kind": "cron", "expr": "0 22 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "【每日知识沉淀任务】请启动知识沉淀流程：\n1.  **收集信息**：获取过去 24 小时的聊天记录 (sessions_history)，以及当天生成的关键日志文件（如 `/Users/maxime.xian/.openclaw/workspace/logs/evolution_log_YYYY-MM-DD.md`）。\n2.  **提取沉淀**：从收集到的信息中，识别并提炼出：\n    *   重要的行业知识或技术细节。\n    *   可复用的操作流程或工作经验。\n    *   值得记录的经验教训或决策反思。\n3.  **智能归档**：根据内容类型，判断最合适的 `knowledge/` 子目录（`tech/`、`work/`、`lessons/pitfalls/`、`patterns/` 等），将整理好的笔记以 Markdown 格式存入（文件名格式：`YYYY-MM-DD-topic.md`）。\n4.  **汇报总结**：简要汇报今天沉淀了哪些知识，以及存储在哪个位置。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
+  "name": "weekly-evolution-curve",
+  "schedule": { "kind": "cron", "expr": "30 23 * * 0", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "【每周能力进化曲线】请调用 growth-tracker 技能，生成最近 7 天的能力进化曲线报告。",
+    "model": "google/gemini-flash-latest"
+  },
+  "delivery": { "mode": "announce" }
 }
-```
+三、故障恢复 SOP
+3.1 向量存储损坏恢复
+检查 backup/knowledge-store.json.bak
+用备份覆盖 或 重建空文件
+从 memory/B_Ore/ 手动重建索引
+记录至 logs/recovery_log.md
+3.2 Cron 链失败处理
+exec 类型：自动重试 1 次
+agentTurn 类型：记录至 error-correction，不重试
+连续 3 次失败：触发飞书告警
+四、低能量期自动降级规则
+触发条件：睡眠 < 5h / 连续负面反馈 / 报错 5 次 / 手动"低能量模式"
 
-## Daily Quantitative Report (Cron Job)
+降级操作：
 
-```json
-{
- "name": "daily-quantitative-report",
- "schedule": { "kind": "cron", "expr": "0 23 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "【每日量化汇报】请调用 `growth-tracker` 技能，生成当天的量化日报。报告需包含：任务完成率、学习成果、剩余上下文空间。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
-}
-```
+暂停：知识沉淀、自我进化、每周曲线任务
+保留：Git 备份、日程提醒
+恢复触发：连续 2 天无负面反馈 或 手动「能量恢复」
 
-## Weekly Capability Evolution Curve (Cron Job)
+五、向量存储工程边界
+为什么选择简化 TF？
 
-```json
-{
- "name": "weekly-evolution-curve",
- "schedule": { "kind": "cron", "expr": "30 23 * * 0", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "agentTurn",
-  "message": "【每周能力进化曲线】请调用 `growth-tracker` 技能，生成一份最近 7 天的能力进化曲线报告。",
-  "model": "google/gemini-flash-latest"
- },
- "delivery": { "mode": "announce" }
-}
-```
+零依赖（纯 Node.js）
+O(1) 添加
+85% 精度在个人场景够用
+未来升级：文档量 > 500 条时引入 natural npm 库。
 
-## Daily GitHub Backup (Cron Job)
 
-```json
-{
- "name": "daily-github-backup",
- "schedule": { "kind": "cron", "expr": "0 23 * * *", "tz": "Asia/Shanghai" },
- "payload": {
-  "kind": "exec",
-  "command": "/Users/maxime.xian/.openclaw/workspace/backup_workspace.sh"
- },
- "delivery": { "mode": "announce" }
-}
-```
