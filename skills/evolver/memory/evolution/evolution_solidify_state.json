@@ -1,7 +1,7 @@
 {
   "last_run": {
-    "run_id": "run_1775479918988",
-    "created_at": "2026-04-06T12:51:59.237Z",
+    "run_id": "run_1775481266143",
+    "created_at": "2026-04-06T13:14:26.211Z",
     "parent_event_id": null,
     "selected_gene_id": null,
     "selected_capsule_id": null,
@@ -10,7 +10,7 @@
       "reason": [
         "no matching gene found; new gene may be required",
         "signals: tool_bypass",
-        "memory_graph: memory_prefer:gene_gep_innovate_from_opportunity | gene_prior:0.993",
+        "memory_graph: memory_prefer:gene_gep_innovate_from_opportunity | memory_ban:gene_gep_repair_from_errors | gene_prior:0.991",
         "drift_intensity: 0.577"
       ],
       "alternatives": []
@@ -20,7 +20,7 @@
     ],
     "mutation": {
       "type": "Mutation",
-      "id": "mut_1775479918987",
+      "id": "mut_1775481266142",
       "category": "innovate",
       "trigger_signals": [
         "tool_bypass"
@@ -29,7 +29,7 @@
       "expected_effect": "explore new strategy combinations to escape local optimum",
       "risk_level": "medium"
     },
-    "mutation_id": "mut_1775479918987",
+    "mutation_id": "mut_1775481266142",
     "personality_state": {
       "type": "PersonalityState",
       "rigor": 1,
@@ -48,7 +48,7 @@
     "reused_source_node": null,
     "reused_chain_id": null,
     "baseline_untracked": [],
-    "baseline_git_head": "770ef9b9d100e956a14dc5115dc1e79b749272e3",
+    "baseline_git_head": "e07610d7b478aace73dcc7652be82a7cf30fa0eb",
     "blast_radius_estimate": {
       "files": 12,
       "lines": 960
