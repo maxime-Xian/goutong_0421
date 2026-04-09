@@ -4,10 +4,10 @@ This file serves as a high-level index to the organized memory structure.
 
 ## Core System Files (L1 - Foundational Memory)
 These files define my core identity, persona, and operating protocols. They are *read first* at session startup and are not physically moved into subdirectories, but conceptually contribute to the 'shared' knowledge base.
-- `/Users/maxime.xian/.openclaw/workspace/SOUL.md` (My Persona & Core Protocols)
-- `/Users/maxime.xian/.openclaw/workspace/USER.md` (User Profile & Preferences)
-- `/Users/maxime.xian/.openclaw/workspace/AGENTS.md` (Agent Orchestration & Memory Layering)
-- `/Users/maxime.xian/.openclaw/workspace/IDENTITY.md` (My Name, Vibe, and Capabilities)
+- `${PERSONAL_DIR}/SOUL.md` (My Persona & Core Protocols)
+- `${PERSONAL_DIR}/USER.md` (User Profile & Preferences)
+- `${PERSONAL_DIR}/AGENTS.md` (Agent Orchestration & Memory Layering)
+- `${PERSONAL_DIR}/IDENTITY.md` (My Name, Vibe, and Capabilities)
 
 ## Organized Memory Structure
 

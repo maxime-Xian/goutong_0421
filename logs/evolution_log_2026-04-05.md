@@ -60,7 +60,7 @@
 2. **增强错误处理可见性**：在 Feishu 发送失败时，捕获错误码并解释可能原因（如机器人未入群、API token 过期）
 3. **建立 cron 健康仪表盘**：定期检查并报告 cron 任务状态，主动预警连续失败的任务
 4. **维护模型配置文档**：在 `knowledge/tech/` 中记录支持的模型列表及其别名，避免未来混淆
-5. **优化每日进化总结数据源**：改为读取 `/Users/maxime.xian/.openclaw/workspace/logs/evolution_reports.log` 或 memory 目录下的结构化日志，而非依赖 sessions_history
+5. **优化每日进化总结数据源**：改为读取 `${PERSONAL_DIR}/logs/evolution_reports.log` 或 memory 目录下的结构化日志，而非依赖 sessions_history
 
 ---
 

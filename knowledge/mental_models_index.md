@@ -70,7 +70,7 @@
 ## 📚 详情查询
 
 如需查看特定模型的完整信息（定义、使用条件、示例、学科维度等），请查阅原始文件：
-`/Users/maxime.xian/clawd/claude/思维模型库_主文件.txt.md`
+`/Users/username/clawd/claude/思维模型库_主文件.txt.md`
 
 搜索格式：`## {编号}. {模型名称}`
 

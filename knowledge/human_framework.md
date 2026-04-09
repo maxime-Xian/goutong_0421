@@ -138,4 +138,4 @@ Integrator:
 ## 📚 完整框架参考
 
 如需查看完整的 HUMAN 3.0 框架（包括原型、通道、故障模式等），请参阅：
-`/Users/maxime.xian/clawd/claude/HUMAN 3.0（框架+使用说明）.txt.md`
+`/Users/username/clawd/claude/HUMAN 3.0（框架+使用说明）.txt.md`

@@ -15,6 +15,7 @@
 | 10:00 | file-organization-check | systemEvent | ⚡轻量 | 文件整理提醒 |
 | 22:00 | daily-knowledge-precipitation | agentTurn | 🔥重量 | 核心：知识沉淀与内化 |
 | 23:00 | daily-github-backup | exec | ⚡轻量 | Git 增量备份 |
+| 23:45 | sleep-guardian-check | systemEvent | ⚡轻量 | 睡眠守护检查 |
 | 00:00 | daily-conversation-summary-optimization | agentTurn | 🔥重量 | 自我反思与风格优化 |
 
 ### 00:00 为什么要在这个时间？
@@ -85,7 +86,7 @@
   "schedule": { "kind": "cron", "expr": "0 23 * * *", "tz": "Asia/Shanghai" },
   "payload": {
     "kind": "exec",
-    "command": "/Users/maxime.xian/.openclaw/workspace/backup_workspace.sh"
+    "command": "${PERSONAL_DIR}/backup_workspace.sh"
   },
   "delivery": { "mode": "announce" }
 }
@@ -93,7 +94,21 @@
 
 ---
 
-### 5. daily-conversation-summary-optimization (00:00) — 自我进化
+### 5. sleep-guardian-check (23:45) — 睡眠守护
+
+```json
+{
+  "name": "sleep-guardian-check",
+  "schedule": { "kind": "cron", "expr": "45 23 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "【睡眠守护提醒】现在已经很晚了（23:45），建议先去休息，明天用清醒的脑子继续，会更有效。"
+  },
+  "delivery": { "mode": "announce" }
+}
+```
+
+### 6. daily-conversation-summary-optimization (00:00) — 自我进化
 
 ```json
 {
