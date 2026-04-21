@@ -1,6 +1,0 @@
-{
-  "name": "auto-documenter",
-  "version": "1.0.0",
-  "description": "Automatically generate and update a skills overview document.",
-  "main": "index.js"
-}

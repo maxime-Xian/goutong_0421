@@ -1,6 +1,0 @@
-{
-  "name": "local-vector-store",
-  "version": "1.0.0",
-  "description": "Simple local vector-like store for semantic search and retrieval based on TF-IDF scoring.",
-  "main": "index.js"
-}

@@ -1,6 +1,0 @@
-{
-  "name": "knowledge-graph-builder",
-  "version": "1.0.0",
-  "description": "Extracts relationships between skills and memories to build a conceptual knowledge graph.",
-  "main": "index.js"
-}

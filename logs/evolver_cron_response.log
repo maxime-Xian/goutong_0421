@@ -1,1 +1,0 @@
-【事实】(来源：L4 事件日志) `cron:d5ca66e3-c9f7-40be-9688-4958f3671e14 evolver_watchdog_robust` 在 2026-04-03 11:58 (Asia/Shanghai) 尝试执行 `node skills/feishu-evolver-wrapper/lifecycle.js ensure` 但失败，原因：模块未找到 - skills/feishu-evolver-wrapper/lifecycle.js 不存在。

@@ -1,6 +1,0 @@
-{
-  "name": "gep-knowledge-distiller",
-  "version": "1.0.0",
-  "description": "Distills GEP capsules into a human-readable knowledge base.",
-  "main": "index.js"
-}

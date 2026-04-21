@@ -1,6 +1,0 @@
-{
-  "name": "system-janitor",
-  "version": "1.0.0",
-  "description": "System maintenance tool for cleaning up old logs and temporary files.",
-  "main": "index.js"
-}

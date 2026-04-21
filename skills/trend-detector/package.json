@@ -1,6 +1,0 @@
-{
-  "name": "trend-detector",
-  "version": "1.0.0",
-  "description": "Analyzes evolution event logs to detect trending patterns in signals and gene usage.",
-  "main": "index.js"
-}

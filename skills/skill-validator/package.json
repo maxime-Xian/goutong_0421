@@ -1,6 +1,0 @@
-{
-  "name": "skill-validator",
-  "version": "1.0.0",
-  "description": "Audits skills for standard files and structure requirements.",
-  "main": "index.js"
-}

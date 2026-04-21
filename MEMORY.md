@@ -1,45 +1,39 @@
-# MEMORY.md - Maxime's Long-Term Memory (Index)
+# MEMORY.md — Maxime智能体记忆索引（沟通高手版 v4.0）
 
-This file serves as a high-level index to the organized memory structure.
+## 当前Agent
+- **Agent:** 沟通高手 (Communication Master) v4.0
+- **身份:** 框架主导型对话设计师 × 前额叶监护人
+- **激活:** 2026-04-21
+- **核心框架:** `MAXIME_LOOP_OS_V3_FINAL.md`
 
-## Core System Files (L1 - Foundational Memory)
-These files define my core identity, persona, and operating protocols. They are *read first* at session startup and are not physically moved into subdirectories, but conceptually contribute to the 'shared' knowledge base.
-- `${PERSONAL_DIR}/SOUL.md` (My Persona & Core Protocols)
-- `${PERSONAL_DIR}/USER.md` (User Profile & Preferences)
-- `${PERSONAL_DIR}/AGENTS.md` (Agent Orchestration & Memory Layering)
-- `${PERSONAL_DIR}/IDENTITY.md` (My Name, Vibe, and Capabilities)
+## 核心文件索引
 
-## Organized Memory Structure
+| 文件 | 用途 |
+|------|------|
+| `AGENT_PROFILE.md` | 沟通高手完整角色定义 · NEXUS模块 · SR-HVOS补丁 |
+| `SOUL.md` | 核心宪法 · 沟通原则 · 双重身份定义 |
+| `IDENTITY.md` | 身份标识 · 核心能力 · 标识符号 |
+| `AGENTS.md` | 调度中枢 · Mode COMM · 问题分类路由 |
+| `skills/agent-communication/SKILL.md` | Skill路由 · 知识库索引 · NEXUS速查表 |
+| `MAXIME_LOOP_OS_V3_FINAL.md` | 完整系统蓝图 · 架构图 · 部署步骤 |
+
+## 沟通知识库
+
+| 记忆文件 | 内容 |
+|---------|------|
+| `memory/沟通高手_Agent_Role_v1.md` | Agent角色定义 · NEXUS模块 · SR-HVOS |
+| `memory/沟通知识库_集成记录_v2025-12-20.md` | 知识库来源 · 结构索引 · Skill调用路径 |
+
+**知识库路径:** `/Users/maxime.xian/Downloads/using_now/沟通/`
+(9份核心文档，已集成至 `skills/agent-communication/SKILL.md`)
+
+## 物理架构
 
 ```
-memory/
-├── guardian/
-│   ├── reflections/      ← 我的反省与学习，包括对巡检报告的洞察
-│   │   └── agent_cron_errors.md (Cron任务最佳实践与我的反思)
-│   ├── evolution/        ← 我的进化状态与学习地图（evomap状态 + 心跳学习状态）
-│   ├── error-correction/ ← 我的错误纠正案例（防止重犯）
-│   └── operational/      ← 我的操作状态（如cron任务状态、会话状态）
-├── dimow/                ← 特定项目数据（如金价+股票监控数据）
-├── shared/               ← 通用共享知识（生平事实+案例库+学习协议）
-│   *(Note: Core System Files above contribute here conceptually)*
-├── episodes/             ← 重大事件记录与模板
-│   └── 2026-03-03_browser_plugin_success.md (浏览器插件成功连接事件)
-└── daily/2026-03/       ← 每日快照归档（例如，每日对话总结、思考过程）
+memory/           ← Agent记忆 · 闪念缓存 · B_Ore · 里程碑
+knowledge/       ← 沟通知识库 · ECA专家系统 · 元认知系统
+skills/          ← agent-communication Skill
+logs/            ← 沟通案例记录 · 进化快照
 ```
 
-## Knowledge Base (L3 - Shared/Deep Knowledge)
-- **People Profiling**:
-  - `knowledge/people/maxime/`:
-    - `biography_raw_facts.md` (Career & Business)
-    - `cognitive_profile.md` (Talents & Bottlenecks)
-    - `health_patterns.md` (Bipolar & Energy)
-- **Patterns**:
-  - `knowledge/patterns/behavioral/maxime_patterns.md` (Scripts & Evolutions)
-
-## Other General Memory
-- **虾聊 社区 (ClawdChat.ai)**: My account information and role in the ClawdChat community.
-  - Username: vC-Guardian
-  - Homepage: https://clawdchat.cn/u/vC-Guardian
-  - API Key: Stored in `skills/clawdchat/credentials.json`
-  - Status: Pending Claim
-- **Preferences**: Default Search: Tavily (User instruction: 2026-03-03)
+*最后更新: 2026-04-21 — 沟通高手Agent v4.0激活*

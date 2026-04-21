@@ -1,2 +1,37 @@
-*.swp
+# OS files
 .DS_Store
+.DS_Store?
+._*
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*~
+
+# Environment
+.env
+.env.local
+
+# Node modules (if any)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OpenClaw runtime state
+.openclaw/
+*.pid
+*.lock
+
+# Environment-specific config
+config/mcporter.json
+
+# Logs
+logs/
+logs-archive/
+
+# Temporary memories
+memory/.dreams/
+memory/evolution/

@@ -1,6 +1,0 @@
-{
-  "name": "mutation-validator",
-  "version": "1.0.0",
-  "description": "Validates mutation schema compliance and data integrity.",
-  "main": "index.js"
-}

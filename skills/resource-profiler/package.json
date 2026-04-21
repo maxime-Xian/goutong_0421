@@ -1,6 +1,0 @@
-{
-  "name": "resource-profiler",
-  "version": "1.0.0",
-  "description": "Profile system resources (CPU, memory, uptime) to identify performance bottlenecks.",
-  "main": "index.js"
-}

@@ -1,6 +1,0 @@
-{
-  "name": "evolution-success-analyzer",
-  "version": "1.0.0",
-  "description": "Analyzes evolution event logs to calculate success rates and confidence trends.",
-  "main": "index.js"
-}
