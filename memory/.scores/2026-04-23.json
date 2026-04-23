@@ -1,0 +1,20 @@
+{
+  "scanId": "dreaming-deep-001",
+  "scanDate": "2026-04-23",
+  "scanTimestamp": "2026-04-23T04:00:00.000Z",
+  "thresholds": {
+    "minScore": 0.6,
+    "minRecall": 2,
+    "minUnique": 2
+  },
+  "candidatesScored": 0,
+  "results": [],
+  "qualified": {
+    "soul": [],
+    "memory": []
+  },
+  "pending": [],
+  "notMet": [],
+  "status": "completed",
+  "note": "No candidates found in system"
+}

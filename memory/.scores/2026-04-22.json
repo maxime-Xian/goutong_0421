@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "scanId": "dreaming-deep-001",
+  "scanDate": "2026-04-22",
+  "scanTimestamp": "2026-04-22T00:00:00.000Z",
+  "scanTimezone": "Asia/Shanghai",
+  "status": "completed",
+  "summary": {
+    "totalCandidates": 0,
+    "qualified": 0,
+    "pending": 0,
+    "notMet": 0
+  },
+  "candidates": [],
+  "thresholds": {
+    "minScore": 0.6,
+    "minRecall": 2,
+    "minUnique": 2
+  },
+  "note": "No candidates found in candidates.json or recall index"
+}

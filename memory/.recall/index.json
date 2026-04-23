@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-23T03:00:00.000Z",
+  "scanHistory": [
+    {
+      "scanId": "dreaming-light-001",
+      "scanDate": "2026-04-21",
+      "scanTimestamp": "2026-04-21T19:00:00.000Z",
+      "sources": [
+        "memory/daily",
+        "memory/evolution",
+        "memory/reflections"
+      ],
+      "candidatesFound": 0,
+      "newCandidates": 0,
+      "status": "completed",
+      "note": "Initial scan - no content found in target directories"
+    },
+    {
+      "scanId": "dreaming-deep-001",
+      "scanDate": "2026-04-22",
+      "scanTimestamp": "2026-04-22T00:00:00.000Z",
+      "sources": [
+        "memory/.dreams/candidates.json",
+        "memory/.recall/index.json"
+      ],
+      "candidatesScored": 0,
+      "qualified": 0,
+      "pending": 0,
+      "notMet": 0,
+      "status": "completed",
+      "thresholds": {
+        "minScore": 0.6,
+        "minRecall": 2,
+        "minUnique": 2
+      },
+      "note": "No candidates present in system"
+    },
+    {
+      "scanId": "dreaming-light-001",
+      "scanDate": "2026-04-23",
+      "scanTimestamp": "2026-04-23T03:00:00.000Z",
+      "sources": [
+        "memory/daily",
+        "memory/evolution",
+        "memory/reflections"
+      ],
+      "candidatesFound": 0,
+      "newCandidates": 0,
+      "status": "completed",
+      "note": "Target directories empty - no content for today yet"
+    }
+  ],
+  "totalScans": 3
+}

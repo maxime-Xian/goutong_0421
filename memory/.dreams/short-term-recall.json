@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-06T08:38:26.563Z",
+  "updatedAt": "2026-04-21T12:00:31.966Z",
   "entries": {
     "memory:memory/2026-04-03.md:1:21": {
       "key": "memory:memory/2026-04-03.md:1:21",
@@ -11,6 +11,7 @@
       "snippet": "# Daily Memory - 2026-04-03 ## 📊 System Status - **Feishu Channels**: Successfully fixed. Gateway restarted. Two bots configured: `openclaw_mac_feishu` (default) and `bot_b_feishu`. - **Authorization**: Attempted calendar/task auth for Maxime; links were refreshed after expiration. ## 🛠️ Key Actions & Decisions - **Feishu Configuration**: Manually edited `openclaw.json` to correctly structure `channels.feishu.accounts`. - **Project Evaluation**: Evaluated `karpathy/autoresearch`. Recommended **not to install** due to hardware mismatch (NVIDIA GPU requirement) and misalignment with current productivity goals. - **Mental Model Correction**: Addressed user feedback regarding \"confabulated e",
       "recallCount": 2,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 0.9172356337308882,
       "maxScore": 0.45938082039356226,
       "firstRecalledAt": "2026-04-06T07:08:09.125Z",
@@ -42,6 +43,7 @@
       "snippet": "- Created `proactive-learning-protocol.md`: Mandatory fact-check before any root cause analysis. - Created `THINKING_PATTERNS.md`: Defined Patterns F (skipping verification) and G (anthropomorphic narrative) with triggers and intervention strategies. - **Intervention**: If unverified analysis is detected, the user or system says \"Pattern F\", triggering a pause for verification. ## 📈 Optimization - Updated `USER.md` with \"Skill Installation Safety Protocol\" and \"Causal Analysis Pre-Verification\" behavior rules. --- *Memory captured for Daily Evolution Summary and Knowledge Precipitation.*",
       "recallCount": 2,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 0.899256083369255,
       "maxScore": 0.45422011315822597,
       "firstRecalledAt": "2026-04-06T07:08:09.125Z",
@@ -62,6 +64,37 @@
         "created",
         "proactive",
         "learning"
+      ]
+    },
+    "memory:memory/daily/2026-03/2026-03-06.md:1:57": {
+      "key": "memory:memory/daily/2026-03/2026-03-06.md:1:57",
+      "path": "memory/daily/2026-03/2026-03-06.md",
+      "startLine": 1,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "# 2026-03-06 - 每日工作日志 ## 📅 系统状态 (21:30 UTC = 周六 05:30 GMT+8) - 磁盘: 50% (20G/40G) - 内存: 1.1Gi/1.9Gi (58%) - 负载: 0.00, 0.22, 0.19 - Gateway: 运行中 (PID 1923235) --- ## ✅ 今日完成事项 ### 1. 周总结生成 - ✅ 生成 2026-03-06-weekly-summary.md - ✅ 总结第10周（2月28日-3月6日）工作 - ✅ 记录系统变更、完成任务、待解决问题 ### 2. 陷阱数据库更新 - ✅ 当前记录：5 个坑位 - ✅ 高风险坑位：4 个 - ✅ 核心覆盖：UI焦虑、过度承诺、信息过载、熬夜倦怠、分析瘫痪 ### 3. 系统监控 - ✅ 磁盘使用稳定（50%） - ✅ 内存使用正常（58%） - ✅ Gateway 进程运行正常 - ✅ 系统负载健康 --- ## 📋 待办事项 ### 高优先级 - [ ] 解决金价监控数据源问题 - [ ] 修复飞书文档格式 - [ ] 执行 Governance 协议审计决策 ### 中优先级 - [ ] 完成 ClawdChat 入驻任务 - [ ] 配置自动化工作流 - [ ] 记录 ECA 系统运行数据 ### 低优先级 - [ ] 探索更多 OpenClaw 技能 - [ ] 优化认知成本计算 - [ ] 生成 Cognitive ROI 报告 --- ## 🎯 下一步行动 1. **等待 Governor 决策**：复",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T12:00:31.966Z",
+      "lastRecalledAt": "2026-04-21T12:00:31.966Z",
+      "queryHashes": [
+        "c0eb3ae19513"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "gateway",
+        "20g/40g",
+        "1.1gi/1.9gi",
+        "0.00",
+        "0.22",
+        "0.19",
+        "2026-03-06-weekly-summary.md",
+        "2月28日-3月6日"
       ]
     }
   }

@@ -1,0 +1,29 @@
+{
+  "scanDate": "2026-04-23",
+  "scanTime": "2026-04-22T19:30:00Z",
+  "version": 1,
+  "status": "completed",
+  
+  "deduplicatedCandidates": [],
+  
+  "themeDiscovery": {
+    "themesFound": 0,
+    "patternGroups": [],
+    "novelPatterns": []
+  },
+  
+  "metadata": {
+    "newCandidatesCount": 0,
+    "pendingCandidatesCount": 0,
+    "totalUniqueCandidates": 0,
+    "scanCoverage": ["memory/daily", "memory/evolution", "memory/reflections"],
+    "scanDirectoriesExist": false,
+    "note": "Target directories empty - no new content for theme extraction"
+  },
+  
+  "outputFiles": {
+    "themesJson": "memory/.themes/2026-04-23.json",
+    "patternsCandidates": "memory/pending/patterns_candidates.md",
+    "dreamDiary": "memory/.dreams/Dream_Diary.md"
+  }
+}
